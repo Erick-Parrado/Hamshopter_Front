@@ -8,10 +8,12 @@
         <span id="stock">Disponibles: 0</span>
         <span id="price">$20.000</span>
     </div>
+    <!--Informacion de producto-->
     <span id="label_weigh" class="product_label">Peso aproximado</span>
     <span id="weigh" class="product_info">100gr</span>
     <span id="label_feeding" class="product_label">Alimentacion</span>
     <span id="feeding" class="product_info">Granulado premium</span>
+    <!--Contador para compra-->
     <span id="friend_counter">0</span>
     <button id="more_friends">+</button>
     <button id="less_friends">-</button>
@@ -45,7 +47,7 @@
 
         #main_info
             position: relative
-            background-color: #00cbc1
+            background-color: var(--main-color)
             color: #FFF
 
             grid-column: 2/4
@@ -85,7 +87,7 @@
             grid-row: 1
             grid-column: 5
 
-            background: #00cbc1
+            background: var(--main-color)
 
         #less_friends
             grid-row: 2/4

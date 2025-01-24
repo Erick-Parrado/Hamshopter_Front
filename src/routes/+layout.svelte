@@ -26,7 +26,7 @@
         width:100%
         height:9em
 
-        background-color: #00cbc1
+        background-color: var(--main-color)
 
         color: white
         font: 1em Itim-R

@@ -1,18 +1,50 @@
 <script>
     import HamCard from "$lib/component/hamCard.svelte";
+    import SaleModal from "$lib/component/saleModal.svelte";
 </script>
 
-<h1>Amiguitos Disponibles</h1>
-<HamCard/>
-<button>
+<h1 class="section_title">Amiguitos Disponibles</h1>
+<SaleModal/>
+<section>
+    <HamCard/>
+</section>
+<button id="take_friends">
     Me lo llevo!
 </button>
 
 <style lang="sass" global>
+    @import src\app.sass
+    
     main
         display: flex
         align-items: center
-        justify-content: center
         flex-flow: column
 
+        .section_title
+            font: 2em Itim-R
+
+        section
+            height: 35em
+            overflow-y: scroll
+
+            padding: 0 1em
+
+            &>*
+                margin-bottom: 1em
+            
+        
+        #take_friends
+            position: absolute
+            bottom: 2em
+
+            height: 2em
+            width: 20em
+
+            background: var(--main-color)
+
+            border: none
+            border-radius: 5px
+
+            font: 2em Itim-R
+            color: #FFF
 </style>
