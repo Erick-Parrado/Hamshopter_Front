@@ -21,7 +21,8 @@
         justify-content: center
         align-items: center
 
-        z-index: 5
+        position: relative
+        z-index: 1
 
         width:100%
         height:9em
@@ -54,11 +55,13 @@
         top: 0
         left: 0
 
-        z-index: 1
+        z-index: 0
 
         padding: 9em 0 0 0
 
         height: 100%
         width: 100%
+        
+        background: #E0E0E0
 
 </style>

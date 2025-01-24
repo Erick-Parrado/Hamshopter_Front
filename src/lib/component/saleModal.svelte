@@ -32,6 +32,7 @@
     <label id="lb_ccv" for="ccv">Código de seguridad</label>
     <input id="ccv" name="ccv" type="text"/>
     <input type="submit" name="Enviar" id="submit"/>
+    <button id="cancelar"> Cancelar</button>
  </form>
 </div>
 <style le lang='sass'>
@@ -54,8 +55,8 @@
 
         #sale_form
             display: grid
-            grid-template-columns: 3em 6em 3em 6em
-            grid-template-rows: 3em repeat(7,min-content) min-content  repeat(9,min-content) 3em
+            grid-template-columns: 2em 6em 3em 6em
+            grid-template-rows: 3em repeat(7,min-content)  repeat(9,min-content) 3em 3em
             column-gap: 5px
 
             height: auto
@@ -99,16 +100,11 @@
                 grid-area: 5 / 2 / 6 / 5
 
             #lb_envio
-                justify-self: center
-                align-self: center
                 grid-area: 6 / 1 / 7 / 2
             
             #envio
                 grid-area: 6 / 2 / 7 / 3
                 justify-self: left
-                align-self: center
-                
-                height: 50%
 
             #lb_direccion
                 grid-area: 7 / 1 / 8 / 5
@@ -118,7 +114,7 @@
             
             #pago_titulo
                 grid-area: 9 / 1 / 10 / 5
-                margin-top: 1em
+                margin-top: 0.5em
 
             #lb_num_tarjeta
                 grid-area: 10 / 1 / 11 / 5
@@ -130,7 +126,7 @@
                 grid-area: 12 / 1 / 13 / 4
 
             #cliente_titular
-                grid-area: 12 / 4 / 13 / 5
+                grid-area: 12 / 3 / 13 / 4
 
             #lb_titular
                 grid-area: 13 / 1 / 14 / 5
@@ -160,7 +156,7 @@
                 grid-area: 18 / 3 / 19 / 5
             
             #submit
-                grid-area: 19 / 1 /19 /5
+                grid-area: 19 / 1 / 20 /5
                 
                 margin-top: 1em
 
@@ -176,6 +172,23 @@
                 font: 1em Itim-R
                 color: #FFF
 
+            #cancelar
+                grid-area: 20 / 1 /21 /5
+                
+                margin-top: 1em
+
+                width: 50%
+
+                justify-self: center
+
+                border-color: #434343
+
+                border-radius: 5px
+                border-width: 2px
+                border-style: solid
+
+                font: 1em Itim-R
+                color: #434343
             
 
 

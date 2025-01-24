@@ -4,7 +4,6 @@
 </script>
 
 <h1 class="section_title">Amiguitos Disponibles</h1>
-<SaleModal/>
 <section>
     <HamCard/>
 </section>
