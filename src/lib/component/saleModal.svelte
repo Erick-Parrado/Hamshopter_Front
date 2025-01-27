@@ -1,6 +1,7 @@
 <script lang='ts'>
-
+    let {show=false} = $props()
 </script>
+{#if show}
 <div class='modal_background'>
  <form id="sale_form">
     <h1 id="entrega_titulo">Detalles de entrega</h1>
@@ -31,10 +32,13 @@
     <input id="fecha_exp" name="fecha_exp" type="text"/>
     <label id="lb_ccv" for="ccv">Código de seguridad</label>
     <input id="ccv" name="ccv" type="text"/>
-    <input type="submit" name="Enviar" id="submit"/>
+    <a href="/compra/1" id="submit_a">
+        <input type="submit" name="Enviar" id="submit"/>
+    </a>
     <button id="cancelar"> Cancelar</button>
  </form>
 </div>
+{/if}
 <style le lang='sass'>
     @import src\app.sass
 
@@ -155,7 +159,7 @@
             #ccv
                 grid-area: 18 / 3 / 19 / 5
             
-            #submit
+            #submit_a
                 grid-area: 19 / 1 / 20 /5
                 
                 margin-top: 1em
@@ -164,13 +168,17 @@
 
                 justify-self: center
 
-                background: var(--main-color)
+                #submit
+                    height: 100%
+                    width: 100%
 
-                border: none
-                border-radius: 5px
+                    background: var(--main-color)
 
-                font: 1em Itim-R
-                color: #FFF
+                    border: none
+                    border-radius: 5px
+
+                    font: 1em Itim-R
+                    color: #FFF
 
             #cancelar
                 grid-area: 20 / 1 /21 /5
