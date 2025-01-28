@@ -50,16 +50,16 @@
         position: absolute
         top: 0
         left: 0
-        z-index: 5
+        z-index: 2
 
-        height: 100vh
+        height: 100%
         width: 100vw
 
         background: #000A
 
         #sale_form
             display: grid
-            grid-template-columns: 2em 6em 3em 6em
+            grid-template-columns: 3em 6em 3em 6em
             grid-template-rows: 3em repeat(7,min-content)  repeat(9,min-content) 3em 3em
             column-gap: 5px
 

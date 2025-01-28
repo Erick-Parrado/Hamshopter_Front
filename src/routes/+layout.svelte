@@ -51,15 +51,13 @@
         img
             height: 6em
     main
-        position: absolute
+        position: relative
         top: 0
         left: 0
-
         z-index: 0
 
-        padding: 9em 0 0 0
 
-        height: 100%
+        height: 90vh
         width: 100%
         
         background: #E0E0E0
