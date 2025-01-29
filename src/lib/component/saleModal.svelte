@@ -23,11 +23,11 @@
     <input id="cliente_titular" name="cliente_titular" type="checkbox"/>
     <label id="lb_titular" for="titular">Nombre titular</label>
     <input id="titular" name="titular" type="text"/>
-    <label id="lb_titular_id" for="titular_id">Documento de identificación</label>
+    <label id="lb_titular_num_id" for="titular_num_id">Documento de identificación</label>
     <select  id="titular_tipo_id" name="titular_tipo_id">
         <option>CC</option>
     </select>
-    <input id="titular_id" name="titular_id" type="text"/>
+    <input id="titular_num_id" name="titular_num_id" type="text"/>
     <label id="lb_fecha_exp" for="fecha_exp">Fecha de expiración</label>
     <input id="fecha_exp" name="fecha_exp" type="text"/>
     <label id="lb_ccv" for="ccv">Código de seguridad</label>
@@ -138,10 +138,10 @@
             #titular
                 grid-area: 14 / 1 / 15 / 5
 
-            #lb_titular_id
+            #lb_titular_num_id
                 grid-area: 15 / 1 / 16 / 5
 
-            #titular_id
+            #titular_num_id
                 grid-area: 16 / 2 / 17 / 5
             
             #titular_tipo_id
