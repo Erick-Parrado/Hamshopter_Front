@@ -3,17 +3,7 @@
 
     let count = $state(0)
     
-    let {item={
-        id:"s234234",
-        nombre:"",
-        caracteristicas:{
-            pesoAproximado:"",
-            alimentacion:""
-        },
-        precio:20000,
-        stock:2,
-        image:"/mumu_3.png"
-    }} = $props()
+    let {item} = $props()
 
     $effect(()=>{
         compra.update((c)=>{
@@ -53,9 +43,9 @@
     </div>
     <!--Informacion de producto-->
     <span id="label_weigh" class="product_label">Peso aproximado</span>
-    <span id="weigh" class="product_info">100gr</span>
+    <span id="weigh" class="product_info">{item.caracteristicas.peso_aproximado}gr</span>
     <span id="label_feeding" class="product_label">Alimentacion</span>
-    <span id="feeding" class="product_info">Granulado premium</span>
+    <span id="feeding" class="product_info">{item.caracteristicas.alimentacion}</span>
     <!--Contador para compra-->
     <span id="friend_counter">{count}</span>
     <button id="more_friends" onclick={addFriends}>+</button>

@@ -1,13 +1,19 @@
 <script>
     import HamCard from "$lib/component/hamCard.svelte";
     import SaleModal from "$lib/component/saleModal.svelte";
+    
+    let {data}=$props()
+
+    console.log(data)
 
     let show_form = false
 </script>
     <SaleModal show={show_form}/>
 <h1 class="section_title">Amiguitos Disponibles</h1>
 <section>
-    <HamCard/>
+    {#each data.items as item}
+        <HamCard item={item}/>
+    {/each}
 </section>
 <button id="take_friends" onclick={()=>{show_form=!show_form}}>
     Me lo llevo!
