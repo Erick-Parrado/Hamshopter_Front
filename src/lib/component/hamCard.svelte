@@ -1,12 +1,55 @@
-<script lang='ts'>
-    let stock = 0
+<script>
+    import { compra } from "../../stores/compra";
+
+    let count = $state(0)
+    
+    let {item={
+        id:"s234234",
+        nombre:"",
+        caracteristicas:{
+            pesoAproximado:"",
+            alimentacion:""
+        },
+        precio:20000,
+        stock:2,
+        image:"/mumu_3.png"
+    }} = $props()
+
+    $effect(()=>{
+        compra.update((c)=>{
+            Object.assign(c.items,{[item.id]:{
+                nombre:item.nombre,
+                precio:item.precio,
+                cantidad:count,
+                total:count*item.precio
+            }})
+            return c
+        })
+    })
+
+    compra.subscribe((c)=>{
+        console.log(c)
+    })
+
+    const addFriends = () =>{
+        if(count<item.stock){
+            count++
+        }
+    }
+    
+    const removeFriend = () =>{
+        if(count>0){
+            count--
+        }
+    }
+    
 </script>
 <div class="ham_card">
-    <img src="/mumu_3.png" alt="mumu">
+    <img src={item.image} alt="mumu">
     <div id="main_info">
         <span id="name">Hamster Blanco</span>
-        <span id="stock">Disponibles: 0</span>
-        <span id="price">$20.000</span>
+        <span id="stock">Disponibles: {item.stock}</span>
+        <span id="price">${item.precio}</span>
     </div>
     <!--Informacion de producto-->
     <span id="label_weigh" class="product_label">Peso aproximado</span>
@@ -14,9 +57,9 @@
     <span id="label_feeding" class="product_label">Alimentacion</span>
     <span id="feeding" class="product_info">Granulado premium</span>
     <!--Contador para compra-->
-    <span id="friend_counter">0</span>
-    <button id="more_friends">+</button>
-    <button id="less_friends">-</button>
+    <span id="friend_counter">{count}</span>
+    <button id="more_friends" onclick={addFriends}>+</button>
+    <button id="less_friends" onclick={removeFriend}>-</button>
 </div>
 <style lang='sass'>
     @import src\app.sass
@@ -88,6 +131,9 @@
             grid-column: 5
 
             background: var(--main-color)
+
+            &:active
+                background: white
 
         #less_friends
             grid-row: 2/4

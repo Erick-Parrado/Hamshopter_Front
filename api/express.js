@@ -1,7 +1,8 @@
 import express from 'express'
 import cors from 'cors'
-import { ComprasRouter } from './routes/compra.js';
 import db from './firestore.js';
+import { ComprasRouter } from './routes/compra.js';
+import { InventarioRouter } from './routes/inventario.js';
 
 const app = express()
 const port = 3000
@@ -15,6 +16,7 @@ const requestTime = function (req, res, next) {
   next()
 }
 
+//Dependencias
 app.use(requestTime)
 
 const database = function(req,res,next){
@@ -25,9 +27,11 @@ const database = function(req,res,next){
 app.use(database)
 
 
+//Iniciador de aplicación
 app.listen(port, () => {
   console.log(`Hamshopter app listening on port ${port}`)
 })
 
-//Routes
+//Rutas
 app.use(ComprasRouter)  
+app.use(InventarioRouter)  

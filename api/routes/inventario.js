@@ -4,18 +4,18 @@ import { Cliente } from '../entities/clientes.js';
 
 const router = express.Router()
 
-router.get('/pago',async (req,res)=>{
+router.get('/items',async (req,res)=>{
     let body = req.body
-
     try {
-        const consultaClienteExistente = query(collection(req.db,"clientes"), where("num_id","==",body.num_id))
-        
+        const snapshotItems = getDocs(collection(req.db,"inventario"))
+        const items = (await snapshotItems).docs.map((doc)=>{
+            console.log(doc.data())
+            return doc.data()
+        })
+        res.status(200).send(items)
     }catch (e) {
         console.error("Error adding document: ", e);
     }
-    res.send('-_-')
 })
 
-export {router as ComprasRouter}
-
-
+export {router as InventarioRouter}

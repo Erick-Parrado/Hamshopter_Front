@@ -3,7 +3,7 @@
 </script>
 {#if show}
 <div class='modal_background'>
- <form id="sale_form">
+ <form id="sale_form" method="POST" action="/compra/1">
     <h1 id="entrega_titulo">Detalles de entrega</h1>
     <label id="lb_nombre" for="nombre">Nombres y apellidos</label>
     <input id="nombre" name="nombre" type="text"/>
@@ -32,10 +32,8 @@
     <input id="fecha_exp" name="fecha_exp" type="text"/>
     <label id="lb_ccv" for="ccv">Código de seguridad</label>
     <input id="ccv" name="ccv" type="text"/>
-    <a href="/compra/1" id="submit_a">
-        <input type="submit" name="Enviar" id="submit"/>
-    </a>
-    <button id="cancelar"> Cancelar</button>
+    <input id="submit" type="submit" name="Continuar"/>
+    <button id="cancelar" onclick={()=>{show=false}}> Cancelar</button>
  </form>
 </div>
 {/if}
@@ -60,7 +58,7 @@
         #sale_form
             display: grid
             grid-template-columns: 3em 6em 3em 6em
-            grid-template-rows: 3em repeat(7,min-content)  repeat(9,min-content) 3em 3em
+            grid-template-rows: 3em repeat(7,min-content)  repeat(9,min-content) 2em 2em
             column-gap: 5px
 
             height: auto
@@ -159,26 +157,20 @@
             #ccv
                 grid-area: 18 / 3 / 19 / 5
             
-            #submit_a
+            #submit
                 grid-area: 19 / 1 / 20 /5
-                
-                margin-top: 1em
 
                 width: 50%
 
                 justify-self: center
 
-                #submit
-                    height: 100%
-                    width: 100%
+                background: var(--main-color)
 
-                    background: var(--main-color)
+                border: none
+                border-radius: 5px
 
-                    border: none
-                    border-radius: 5px
-
-                    font: 1em Itim-R
-                    color: #FFF
+                font: 1em Itim-R
+                color: #FFF
 
             #cancelar
                 grid-area: 20 / 1 /21 /5

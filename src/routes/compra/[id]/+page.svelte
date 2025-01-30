@@ -28,17 +28,20 @@
         <HamRecord/>
         <OtherRecord record="Recargo a domicilio" price="$5.000"/>
         <OtherRecord record="Total" price="$55.000"/>
-        <a href="/">
-            <button id="to_shop">
-                Volver a la tienda
-            </button>
-        </a>
 
 
     </div>
     <div class="receipt-bottom"  style="background-image: url({receipt_bottom});"></div>
 
 </div>
+<button id="purchase">
+    Realizar pago
+</button>
+<a href="/">
+    <button id="to_shop">
+        Volver a la tienda
+    </button>
+</a>
 <style lang="sass" global>
     @import src\app.sass
     
@@ -83,19 +86,6 @@
                 h2,h3
                     text-align: center
                 
-                #to_shop
-                    height: 2em
-                    width: 100%
-
-                    background: var(--main-color)
-
-                    margin-top: 1rem
-
-                    border: none
-                    border-radius: 5px
-
-                    font: 1.5em Itim-R
-                    color: #FFF
 
             .receipt-bottom
                 position: relative
@@ -107,4 +97,31 @@
                 object-fit: contain
                 background-repeat: no-repeat
 
+    #purchase
+        height: 2em
+        width: 20em
+
+        background: var(--main-color)
+
+        margin-top: 1rem
+
+        border: none
+        border-radius: 5px
+
+        font: 1.5em Itim-R
+        color: #FFF
+    
+    #to_shop
+        height: 2em
+        width: 20em
+
+        background: var(--main-color)
+
+        margin-top: 1rem
+
+        border: none
+        border-radius: 5px
+
+        font: 1.5em Itim-R
+        color: #FFF
 </style>
